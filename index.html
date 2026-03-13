@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Telemetry & Observability</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <header class="topbar">
+      <div>
+        <h1>Frontend Telemetry & Observability</h1>
+        <p>Monitoring frontend usage, performance, feature adoption, and error trends</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="refreshBtn">Refresh Metrics</button>
+        <button id="exportBtn" class="secondary-btn">Export Events</button>
+      </div>
+    </header>
+
+    <section class="card-grid">
+      <div class="card">
+        <h3>Active Users</h3>
+        <p id="activeUsers">1,248</p>
+      </div>
+      <div class="card">
+        <h3>Page Views</h3>
+        <p id="pageViews">8,932</p>
+      </div>
+      <div class="card">
+        <h3>Error Rate</h3>
+        <p id="errorRate">1.8%</p>
+      </div>
+      <div class="card">
+        <h3>Avg Load Time</h3>
+        <p id="loadTime">1.2s</p>
+      </div>
+      <div class="card">
+        <h3>Feature Adoption</h3>
+        <p id="featureAdoption">68%</p>
+      </div>
+      <div class="card">
+        <h3>API Latency</h3>
+        <p id="apiLatency">320ms</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Usage Trend</h2>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-bar-wrap">
+          <span>Mon</span>
+          <div class="chart-bar"><div class="fill" style="height: 48%"></div></div>
+          <small>6.1k</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Tue</span>
+          <div class="chart-bar"><div class="fill" style="height: 62%"></div></div>
+          <small>7.4k</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Wed</span>
+          <div class="chart-bar"><div class="fill" style="height: 70%"></div></div>
+          <small>8.2k</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Thu</span>
+          <div class="chart-bar"><div class="fill" style="height: 65%"></div></div>
+          <small>7.8k</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Fri</span>
+          <div class="chart-bar"><div class="fill" style="height: 82%"></div></div>
+          <small>9.3k</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Sat</span>
+          <div class="chart-bar"><div class="fill" style="height: 55%"></div></div>
+          <small>6.8k</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Sun</span>
+          <div class="chart-bar"><div class="fill" style="height: 60%"></div></div>
+          <small>7.1k</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header events-header">
+        <h2>Recent Event Logs</h2>
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Info">Info</button>
+          <button class="filter-btn" data-filter="Warning">Warning</button>
+          <button class="filter-btn" data-filter="Error">Error</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Event</th>
+              <th>Page</th>
+              <th>User Segment</th>
+              <th>Severity</th>
+            </tr>
+          </thead>
+          <tbody id="eventBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
